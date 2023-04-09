@@ -1,0 +1,89 @@
+[
+  {
+    "title": {
+      "image": {
+        "alt": "музыка",
+        "path": "img/icon/sprite.svg#icon-note"
+      },
+      "text": "Guilt",
+      "link": "http://",
+      "spanText": ""
+    },
+    "author": {
+      "text": "Nero",
+      "link": "http://"
+    },
+    "album": {
+      "text": "Welcome Reality",
+      "link": "http://"
+    },
+    "time": {
+      "text": "4:44"
+    },
+    "id": 0
+  },
+  {
+    "title": {
+      "text": "Elektro",
+      "spanText": ""
+    },
+    "author": {
+      "text": "Dynoro, Outwork, Mr. Gee"
+    },
+    "album": {
+      "text": "Elektro"
+    },
+    "time": {
+      "text": "2:22"
+    },
+    "id": 1
+  },
+  {
+    "title": {
+      "text": "I’m Fire",
+      "spanText": ""
+    },
+    "author": {
+      "text": "Ali Bakgor"
+    },
+    "album": {
+      "text": "I’m Fire"
+    },
+    "time": {
+      "text": "2:22"
+    },
+    "id": 2
+  },
+  {
+    "title": {
+      "text": "Non Stop",
+      "spanText": "(Remix)"
+    },
+    "author": {
+      "text": "Стоункат, Psychopath"
+    },
+    "album": {
+      "text": "Non Stop"
+    },
+    "time": {
+      "text": "4:12"
+    },
+    "id": 3
+  },
+  {
+    "title": {
+      "text": "Run Run",
+      "spanText": "(feat. AR/CO)"
+    },
+    "author": {
+      "text": "Jaded, Will Clarke, AR/CO"
+    },
+    "album": {
+      "text": "Run Run"
+    },
+    "time": {
+      "text": "2:54"
+    },
+    "id": 4
+  }
+]

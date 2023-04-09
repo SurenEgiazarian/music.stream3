@@ -1,0 +1,20 @@
+[
+  {
+    "href": "/playlist/1",
+    "imgSrc": "img/playlist01.png",
+    "imgAlt": "Плейлист дня",
+    "id": 1
+  },
+  {
+    "href": "/playlist/2",
+    "imgSrc": "img/playlist02.png",
+    "imgAlt": "100 танцевальных хитов",
+    "id": 2
+  },
+  {
+    "href": "/playlist/3",
+    "imgSrc": "img/playlist03.png",
+    "imgAlt": "Инди-заряд",
+    "id": 3
+  }
+]

@@ -1,0 +1,5 @@
+[
+  { "value": "Главное", "href": "/", "id": 0 },
+  { "value": "Мой плейлист", "href": "/my-tracks", "id": 1 },
+  { "value": "Войти", "href": "/login", "id": 2 }
+]

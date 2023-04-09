@@ -1,0 +1,169 @@
+[
+  {
+    "title": {
+      "image": {
+        "alt": "музыка",
+        "path": "img/icon/sprite.svg#icon-note"
+      },
+      "text": "Guilt",
+      "link": "http://",
+      "spanText": ""
+    },
+    "author": {
+      "text": "Nero",
+      "link": "http://"
+    },
+    "album": {
+      "text": "Welcome Reality",
+      "link": "http://"
+    },
+    "time": {
+      "text": "4:44"
+    },
+    "id": 0
+  },
+  {
+    "title": {
+      "text": "Elektro",
+      "spanText": ""
+    },
+    "author": {
+      "text": "Dynoro, Outwork, Mr. Gee"
+    },
+    "album": {
+      "text": "Elektro"
+    },
+    "time": {
+      "text": "2:22"
+    },
+    "id": 1
+  },
+  {
+    "title": {
+      "text": "I’m Fire",
+      "spanText": ""
+    },
+    "author": {
+      "text": "Ali Bakgor"
+    },
+    "album": {
+      "text": "I’m Fire"
+    },
+    "time": {
+      "text": "2:22"
+    },
+    "id": 2
+  },
+  {
+    "title": {
+      "text": "Non Stop",
+      "spanText": "(Remix)"
+    },
+    "author": {
+      "text": "Стоункат, Psychopath"
+    },
+    "album": {
+      "text": "Non Stop"
+    },
+    "time": {
+      "text": "4:12"
+    },
+    "id": 3
+  },
+  {
+    "title": {
+      "text": "Run Run",
+      "spanText": "(feat. AR/CO)"
+    },
+    "author": {
+      "text": "Jaded, Will Clarke, AR/CO"
+    },
+    "album": {
+      "text": "Run Run"
+    },
+    "time": {
+      "text": "2:54"
+    },
+    "id": 4
+  },
+  {
+    "title": {
+      "text": "Eyes on Fire",
+      "spanText": "(Zeds Dead Remix)"
+    },
+    "author": {
+      "text": "Blue Foundation, Zeds Dead "
+    },
+    "album": {
+      "text": "Eyes on Fire"
+    },
+    "time": {
+      "text": "5:20"
+    },
+    "id": 5
+  },
+  {
+    "title": {
+      "text": "Mucho Bien",
+      "spanText": "(Hi Profile Remix)"
+    },
+    "author": {
+      "text": "HYBIT, Mr. Black, Offer Nissim, Hi Profile"
+    },
+    "album": {
+      "text": "Mucho Bien"
+    },
+    "time": {
+      "text": "3:41"
+    },
+    "id": 6
+  },
+  {
+    "title": {
+      "text": "Knives n Cherries",
+      "spanText": ""
+    },
+    "author": {
+      "text": "minthaze"
+    },
+    "album": {
+      "text": "Captivating"
+    },
+    "time": {
+      "text": "1:48"
+    },
+    "id": 7
+  },
+  {
+    "title": {
+      "text": "How Deep Is Your Love",
+      "spanText": ""
+    },
+    "author": {
+      "text": "Calvin Harris, Disciples"
+    },
+    "album": {
+      "text": "How Deep Is Your Love"
+    },
+    "time": {
+      "text": "3:32"
+    },
+    "id": 8
+  },
+  {
+    "title": {
+      "text": "Morena",
+      "spanText": ""
+    },
+    "author": {
+      "text": "Tom Boxer"
+    },
+    "album": {
+      "text": "Soundz Made in Romania"
+    },
+    "time": {
+      "text": "3:36"
+    },
+    "id": 9
+  }
+]
