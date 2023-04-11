@@ -1,5 +1,6 @@
 import menu from '../../data/menuInfo.json';
 import * as S from './styles';
+import ThemeSwitcher from '../ThemeSwitcher';
 
 function Menu() {
   const listItems = menu.map(({ value, href, id }) => (
@@ -11,6 +12,7 @@ function Menu() {
   return (
     <div>
       <S.MenuList>{listItems}</S.MenuList>
+      <ThemeSwitcher/>
     </div>
   );
 }

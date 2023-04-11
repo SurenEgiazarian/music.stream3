@@ -31,8 +31,6 @@ function Bar() {
     const newIntervalId = setInterval(() => {
       const time = audioRef.current.currentTime;
       setCurrentTime(time);
-      console.log(time);
-      console.log(audioRef.current.ended);
       if(audioRef.current.ended) {
         clearInterval(newIntervalId);
         setIsPlaying(false);
@@ -46,24 +44,13 @@ function Bar() {
   const handleStop = () => {
     console.log('stop');
     audioRef.current.pause();
-    console.log(intervalId);
     clearInterval(intervalId);
-    console.log(currentTime);
-
     setIsPlaying(false);
   };
 
   const togglePlay = isPlaying ? handleStop : handleStart;
 
   const handleMove = (event) => {
-    // console.log(event);
-    // console.log('clientX', event.clientX);
-    // console.log('movementX', event.movementX);
-    // console.log('pageX', event.pageX);
-    // console.log('screenX', event.screenX);
-    // console.log('clientWidth', event.target.clientWidth);
-    // console.log('offsetWidth', event.target.offsetWidth);
-    // console.log('getBoundingClientRect', event.target.getBoundingClientRect());
     const rect = event.currentTarget.getBoundingClientRect();
     const {left, width} = rect;
     const leftClick = event.clientX;
@@ -84,7 +71,7 @@ function Bar() {
         </S.PlayerProgressWrap>
         <S.PlayerBlock>
           <S.Player>
-            <Controls togglePlay={togglePlay}/>
+            <Controls togglePlay={togglePlay} isPlaying={isPlaying}/>
             <TrackPlay />
           </S.Player>
           <Volume />

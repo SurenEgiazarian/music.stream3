@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import * as COLORS from '../../colors';
 
 export const LikeDislike = styled.div`
   display: flex;
@@ -10,16 +9,16 @@ export const LikeDislike = styled.div`
 
 const active = css`
   &:active svg {
-    fill: ${COLORS.controlButtonRegular};
-    stroke: ${COLORS.controlButtonActive};
+    fill: var(--CtrlBtnAct2);
+    stroke: var(--CtrlBtnAct1);
     cursor: pointer;
   }
 `;
 
 const hover = css`
   &:hover svg {
-    fill: transparent;
-    stroke: ${COLORS.controlButtonHover};
+    fill: var(--CtrlBtnHvr2);
+    stroke: var(--CtrlBtnHvr1);
     cursor: pointer;
   }
 `;
@@ -40,13 +39,13 @@ export const Dislike = styled.div`
 export const LikeSvg = styled.svg`
   width: 14px;
   height: 12px;
-  fill: transparent;
-  stroke: ${COLORS.controlButtonRegular};
+  fill: var(--CtrlBtnReg2);
+  stroke: var(--CtrlBtnReg1);
 `;
 
 export const DislikeSvg = styled.svg`
   width: 15px;
   height: 13px;
-  fill: transparent;
-  stroke: ${COLORS.controlButtonRegular};
+  fill: var(--CtrlBtnReg2);
+  stroke: var(--CtrlBtnReg1);
 `;

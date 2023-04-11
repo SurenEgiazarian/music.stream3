@@ -1,22 +1,36 @@
+/* eslint-disable react/jsx-no-constructed-context-values */
+import { useState } from 'react';
+import { themes, ThemeContext } from './contexts/theme';
 import GlobalStyle from './globalStyles';
-import { AppRoutes } from './routes';
 import * as S from './styles';
-
-function checkCookie(name) {
-  return document.cookie.includes(`${name}=`);
-}
+import { AppRoutes } from './routes';
+import checkCookie from './utils/check-cookie';
 
 function App() {
 
+  const [currentTheme, setCurrentTheme] = useState(themes.dark);
+  const [themeName, setThemeName] = useState('dark');
+
   const cookie = checkCookie('token');
 
+  const toggleTheme = () => {
+    if (currentTheme === themes.dark) {
+      setCurrentTheme(themes.light);
+      setThemeName('light');
+      return;
+    }
+
+    setCurrentTheme(themes.dark);
+    setThemeName('dark');
+  }
+
   return (
-    <>
-      <GlobalStyle />
+    <ThemeContext.Provider value={{ themeName, toggleTheme }}>
+      <GlobalStyle theme={currentTheme}/>
       <S.Wrapper>
         <AppRoutes cookie={cookie}/>
       </S.Wrapper>
-    </>
+    </ThemeContext.Provider>
   );
 }
 

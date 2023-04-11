@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
 import { cursorPointer } from '../../styles';
-import * as COLORS from '../../colors';
 
 const getBtnStyle = (btnName) => {
   const btnStyles = {
@@ -28,19 +27,19 @@ const getBtnStyle = (btnName) => {
 const getBtnSvgStyle = (btnName) => {
   const btnSvgStyles = {
     play: css`
-      fill: ${COLORS.controlButtonRegular};
+      fill: var(--controlButtonRegular);
     `,
     next: css`
       fill: inherit;
-      stroke: ${COLORS.controlButtonRegular};
+      stroke: var(--controlButtonRegular);
     `,
     repeat: css`
       fill: transparent;
-      stroke: ${COLORS.controlButtonRegular};
+      stroke: var(--controlButtonRegular);
     `,
     shuffle: css`
       fill: transparent;
-      stroke: ${COLORS.controlButtonRegular};
+      stroke: var(--controlButtonRegular);
     `,
   };
   return btnSvgStyles[btnName];
@@ -50,8 +49,8 @@ export const PlayerBtn = styled.div`
   padding: 5px;
   display: flex;
   align-items: center;
-  fill: ${COLORS.simpleButtonActive};
-  stroke: ${COLORS.controlButtonRegular};
+  fill: var(--simpleButtonActive);
+  stroke: var(--controlButtonRegular);
   width: ${({ width }) => width};
   width: ${({ height }) => height};
   ${({ $btnName }) => getBtnStyle($btnName)}
@@ -61,12 +60,12 @@ export const PlayerBtn = styled.div`
     `
         &:hover svg {
             fill: transparent;
-            stroke: ${COLORS.controlButtonHover};
+            stroke: var(--controlButtonHover);
             cursor: pointer;
         }
         &:active svg {
             fill: transparent;
-            stroke: ${COLORS.controlButtonActive};
+            stroke: var(--controlButtonActive);
             cursor: pointer;
         }
     `}

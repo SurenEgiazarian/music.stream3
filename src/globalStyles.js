@@ -1,7 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
-import * as COLORS from './colors';
 
 const GlobalStyle = createGlobalStyle`
+:root{
+  ${p => p.theme}
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -42,7 +45,7 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     height: 100%;
     font-family: 'StratosSkyeng', sans-serif;
-    color: ${COLORS.mainColor};
+    color: var(--mainColor);
   }
 `;
 

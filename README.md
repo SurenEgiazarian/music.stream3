@@ -1,1 +1,1 @@
-# Music streaming sevice
+# Music streaming service

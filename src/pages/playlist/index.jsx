@@ -7,7 +7,7 @@ export function Playlist({ id }) {
 
     const urlParams = useParams();
     const urlId = Number(urlParams.id);
-    const playlistId = urlId >= 0 ? urlId : Number(id);
+    const playlistId = urlId >= 0 ? urlId : Number(id); //  TODO rewrite it when data from server
 
     return (
         <S.Container>
