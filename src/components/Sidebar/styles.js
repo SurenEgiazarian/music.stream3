@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Link } from "react-router-dom";
-import * as COLORS from '../../colors';
 
 export const SidebarItem = styled.li`
   & {
@@ -11,7 +10,7 @@ export const SidebarItem = styled.li`
     margin-bottom: 30px;
   }
 
-  ${(props) => props.$isLoading && `background-color: ${COLORS.skeleton};`}
+  ${(props) => props.$isLoading && `background-color: var(--skeleton);`}
 `;
 
 export const SidebarLink = styled(Link)`
@@ -27,7 +26,7 @@ export const SidebarImg = styled.img`
 export const MainSidebar = styled.div`
   max-width: 418px;
   padding: 20px 90px 20px 78px;
-  background-color: ${COLORS.background1};
+  background-color: var(--background1);
 `;
 
 export const SidebarBlock = styled.div`

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import * as COLORS from '../../colors';
 
 export const Text = styled.div`
   & {
@@ -21,7 +20,7 @@ export const Popup = styled.div`
   position: absolute;
   top: 50px;
   width: 424px;
-  background: ${COLORS.skeleton};
+  background: var(--skeleton);
   border-radius: 12px;
   display: flex;
   flex-wrap: wrap;
