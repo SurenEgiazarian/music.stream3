@@ -7,21 +7,21 @@ import * as S from './styles';
 const { useState } = React;
 
 function Nav() {
-  const [isMenuVisible, setMenuVisible] = useState(false);
+    const [isMenuVisible, setMenuVisible] = useState(false);
 
-  const toggleMenu = () => {
-    setMenuVisible((prevVisible) => !prevVisible);
-  };
+    const toggleMenu = () => {
+        setMenuVisible((prevVisible) => !prevVisible);
+    };
 
-  const menuComponent = isMenuVisible ? <Menu /> : null;
+    const menuComponent = isMenuVisible ? <Menu /> : null;
 
-  return (
-    <S.MainNav>
-      <Logo />
-      <Burger onClick={toggleMenu} />
-      {menuComponent}
-    </S.MainNav>
-  );
+    return (
+        <S.MainNav>
+            <Logo />
+            <Burger onClick={toggleMenu} />
+            {menuComponent}
+        </S.MainNav>
+    );
 }
 
 export default Nav;

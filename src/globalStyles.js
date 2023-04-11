@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
 :root{
-  ${p => p.theme}
+  ${(p) => p.theme}
 }
 
 * {

@@ -9,7 +9,9 @@ function ThemeSwitcher() {
     const themeIkon = themeName === 'dark' ? <Moon /> : <Sun />;
 
     return (
-        <S.Button type="button" onClick={toggleTheme}>{themeIkon}</S.Button>
+        <S.Button type="button" onClick={toggleTheme}>
+            {themeIkon}
+        </S.Button>
     );
 }
 
