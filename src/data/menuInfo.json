@@ -1,5 +1,6 @@
 [
-  { "value": "Главная", "href": "/", "id": 0 },
-  { "value": "Мой плейлист", "href": "/my-tracks", "id": 1 },
-  { "value": "Войти", "href": "/login", "id": 2 }
+    { "value": "Главная", "href": "/", "id": 0 },
+    { "value": "Мой плейлист", "href": "/my-tracks", "id": 1 },
+    { "value": "Войти", "href": "/login", "id": 2 },
+    { "value": "Выйти", "href": "/logout", "id": 3 }
 ]

@@ -3,17 +3,17 @@ import * as S from './styles';
 import { useThemeContext } from '../../contexts/theme';
 
 function Logo() {
-  const { themeName } = useThemeContext();
+    const { themeName } = useThemeContext();
 
-  const color = themeName === 'dark' ? "white" : "black";
+    const color = themeName === 'dark' ? 'white' : 'black';
 
-  return (
-    <S.NavLogo>
-      <a href="/">
-        <SkyProLogo color={color}/>
-      </a>
-    </S.NavLogo>
-  );
+    return (
+        <S.NavLogo>
+            <a href="/">
+                <SkyProLogo color={color} />
+            </a>
+        </S.NavLogo>
+    );
 }
 
 export default Logo;

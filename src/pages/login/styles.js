@@ -22,8 +22,8 @@ export const Form = styled.form`
 `;
 
 export const LogoImage = styled.img`
-  width: 140px;
-  height: 21 px;
+    width: 140px;
+    height: 21 px;
 `;
 
 export const Input = styled.input`
@@ -71,6 +71,15 @@ export const SimpleButton = styled.button`
     &:active {
         background-color: var(--simpleButtonActive);
     }
+`;
+
+export const Loading = styled.p`
+    color: black;
+`;
+
+export const Error = styled.p`
+    color: red;
+    font-size: 12px;
 `;
 
 export default Container;

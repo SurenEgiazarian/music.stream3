@@ -1,8 +1,8 @@
-import { Navigate, Outlet } from "react-router-dom";
+import { Navigate, Outlet } from 'react-router-dom';
 
-export function ProtectedRoute({ redirectPath = "/", isAllowed}) {
+export function ProtectedRoute({ redirectPath = '/', isAllowed }) {
     if (!isAllowed) {
-        return <Navigate to={redirectPath} replace />
+        return <Navigate to={redirectPath} replace />;
     }
 
     return <Outlet />;
