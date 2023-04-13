@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 
 export const Content = styled.div`
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    max-width: inherit;
     display: flex;
     flex-direction: column;
     background: var(--background1);

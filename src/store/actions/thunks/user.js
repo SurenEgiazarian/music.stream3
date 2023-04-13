@@ -23,6 +23,7 @@ export const signup = (username, email, password) => async (dispatch) => {
 
     try {
         const response = await userAPI.signup(username, email, password);
+        debugger;
         dispatch(signupSuccessAC(response));
     } catch (error) {
         dispatch(signupErrorAC(error));

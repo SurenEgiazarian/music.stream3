@@ -9,7 +9,7 @@ import {
 } from '../../constants';
 import PlayerBtn from '../PlayerBtn';
 
-function Controls({ togglePlay, onNext, onPrevious, isPlaying }) {
+function Controls({ togglePlay, isPlaying }) {
     const playPauseBtn = isPlaying
         ? {
               name: 'pause',
@@ -27,9 +27,9 @@ function Controls({ togglePlay, onNext, onPrevious, isPlaying }) {
           };
 
     const controlBtnsValues = [
-        { name: 'prev', alt: 'предыдущий трек', xlinkHref: ICON_PREV, onClick: onPrevious },
+        { name: 'prev', alt: 'предыдущий трек', xlinkHref: ICON_PREV },
         playPauseBtn,
-        { name: 'next', alt: 'следующий трек', xlinkHref: ICON_NEXT, onClick: onNext },
+        { name: 'next', alt: 'следующий трек', xlinkHref: ICON_NEXT },
         {
             name: 'repeat',
             alt: 'повторить',
@@ -51,7 +51,7 @@ function Controls({ togglePlay, onNext, onPrevious, isPlaying }) {
                         alt={alt}
                         xlinkHref={xlinkHref}
                         width={CONTROLS_SIZES[name].width}
-                        height={CONTROLS_SIZES[name].height}
+                        heght={CONTROLS_SIZES[name].height}
                         cursor={cursor}
                         onClick={onClick}
                         key={name}

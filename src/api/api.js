@@ -20,24 +20,6 @@ export const userAPI = {
     },
 };
 
-export const catalogAPI = {
-    selection(id = null) {
-        return instance.get(`/catalog/selection/${id ? `${id}/` : ''}`);
-    },
-    track(id = null) {
-        return instance.get(`/catalog/track/${id || 'all'}/`);
-    },
-    getFavorite() {
-        return instance.get(`/catalog/track/favorite/all`);
-    },
-    addToFavorite(id) {
-        return instance.post(`/catalog/track/${id}/favorite/`);
-    },
-    removeFromFavorite(id) {
-        return instance.delete(`/catalog/track/${id}/favorite/`);
-    },
-};
-
 // {
 //     "username": "KtotolyaTest",
 //     "email": "test@test.com",
