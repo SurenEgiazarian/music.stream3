@@ -5,12 +5,6 @@ export const Track = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    transition-property: background-color;
-    transition-duration: .3s;
-    transition-timing-function: ease;
-    &:hover {
-        background-color: var(--background3);
-    }
 `;
 
 export const Title = styled.div`
