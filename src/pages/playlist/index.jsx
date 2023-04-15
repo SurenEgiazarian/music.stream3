@@ -1,4 +1,6 @@
+import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { currentTrackIdSelector } from '../../store/selectors/catalog';
 import PlaylistPage from '../../components/PlaylistPage';
 import Bar from '../../components/Bar';
 import * as S from '../main/styles';
@@ -8,10 +10,12 @@ export function Playlist({ id }) {
     const urlId = Number(urlParams.id);
     const playlistId = urlId >= 0 ? urlId : Number(id); //  TODO rewrite it when data from server
 
+    const currentTrackId = useSelector(currentTrackIdSelector);
+
     return (
         <S.Container>
             <PlaylistPage playlistId={playlistId} />
-            <Bar />
+            {currentTrackId && <Bar/>} 
         </S.Container>
     );
 }
