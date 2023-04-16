@@ -1,0 +1,34 @@
+.light {
+    --background-color: #b1b1b1;
+    --color:#181818;
+    --image: #f6f4f4;
+    --logo: #b1b1b1;
+  }
+  .dark {
+    --background-color: #313131;
+    --color:#fff;
+    --image: #313131;
+    --logo: #4e4e4e;
+  }
+  
+.skeletonNote {
+    width: 51px;
+    height: 51px;
+    background-color: var(--image)
+}
+.skeletonTitle{
+    width: 356px;
+    height: 19px;
+    background-color: var(--image)
+}
+.skeletonName {
+    width: 271px;
+    height: 19px;
+    background-color: var(--image);
+    margin-right: 50px;
+}
+.skeletonAlbum {
+    width: 325px;
+    height: 19px;
+    background-color: var(--image)
+}
