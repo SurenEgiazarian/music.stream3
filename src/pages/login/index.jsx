@@ -1,98 +1,47 @@
-/* eslint-disable no-debugger */
+import styles from './style.module.css'
+import logoLight from '../../components/navbar/img/logo__light.png'
+import cn from 'classnames'
 import { useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import Container, * as S from './styles';
-import logo from '../../img/logo-black.png';
-import {
-    userSelector,
-    userLoadingSelector,
-    // userErrorSelector,
-    // userErrorMessageSelector,
-    userErrorResponseDataSelector,
-    allErrorsSelector,
-} from '../../store/selectors/user';
-import { login } from '../../store/actions/thunks/user';
-import { cookies } from '../../utils/cookies';
+import { useEffect, useState } from 'react';
+import {useGetTokenMutation } from '../../store/services';
 
-export function Login({ setIsAllowedHandler }) {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const EMAIL_FIELD_NAME = 'email';
-    const PASSWORD_FIELD_NAME = 'password';
 
-    const dispatch = useDispatch();
-    const user = useSelector(userSelector);
-    const loading = useSelector(userLoadingSelector);
-    const errorData = useSelector(userErrorResponseDataSelector);
-    const errorDescriptions = useSelector(allErrorsSelector);
 
-    console.log('login component');
-    console.log(user.id);
-
-    const navigate = useNavigate();
-
-    // const redirectToHome = () => {
-    //     navigate("/");
-    // };
-
+export function Login () {
+    const history = useNavigate();
+    const [getToken, { data: token, isSuccess: isSuccessGetToken }] = useGetTokenMutation();
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
+    function handleToRegister() {
+        history('/register');
+    }
+    const handleLogin = () => {
+        getToken({email, password})
+        
+    }
     useEffect(() => {
-        console.log('login useEffect');
-        if (cookies.check('token')) {
-            console.log("Login. token exist. redirect to '/'");
-            // redirectToHome();
-            setIsAllowedHandler();
-            navigate('/');
+        if (isSuccessGetToken) { 
+          document.cookie = `tokenRefresh=${token?.refresh}`;
+          document.cookie = `tokenAccess=${token?.access}`
+          history('/');
         }
-    }, [user]);
-
-    const onEmailChange = (e) => {
-        setEmail(e.target.value);
-    };
-
-    const onPasswordChange = (e) => {
-        setPassword(e.target.value);
-    };
-
-    const onFormSubmit = async (e) => {
-        e.preventDefault();
-        console.log(`form submit`);
-        console.log(`email: ${email} пароль: ${password}`);
-        await dispatch(login(email, password));
-    };
-
-    const redirectToSignin = () => {
-        navigate('/signup');
-    };
+      }, [isSuccessGetToken]);
 
     return (
-        <Container>
-            <S.FullHight>
-                <S.Form onSubmit={onFormSubmit}>
-                    <S.LogoImage src={logo} alt="логотип" />
-                    <S.Input
-                        onChange={onEmailChange}
-                        name={EMAIL_FIELD_NAME}
-                        type="text"
-                        placeholder="Email"
-                    />
-                    <S.Input
-                        onChange={onPasswordChange}
-                        name={PASSWORD_FIELD_NAME}
-                        type="password"
-                        placeholder="Пароль"
-                    />
-                    <S.PrimeButton>Войти</S.PrimeButton>
-                    <S.SimpleButton type="button" onClick={redirectToSignin}>
-                        Зарегистрироваться
-                    </S.SimpleButton>
-                    {loading && <S.Loading>Отправка данных</S.Loading>}
-                    {errorData &&
-                        errorDescriptions.map((description, index) => (
-                            <S.Error key={index}>{description}</S.Error>
-                        ))}
-                </S.Form>
-            </S.FullHight>
-        </Container>
-    );
-}
+        <div className={cn(styles.main)}>
+            <div className={cn(styles.menu)}>
+                <div className={cn(styles.image)}>
+                    <img src={logoLight} alt="" />
+                </div>
+                <div className={cn(styles.inputs)}>
+                    <input className={cn(styles.login)} type="text" placeholder='Логин' defaultValue={email} onChange={(e) => setEmail(e.target.value)}/>
+                    <input className={cn(styles.password)} type="password" placeholder='Пароль' defaultValue={password} onChange={(e) => setPassword(e.target.value)}/>
+                </div>
+                <div className={cn(styles.loginButtons)}>
+                    <button className={cn(styles.buttonLogin)} onClick={handleLogin}>Войти</button>
+                    <button className={cn(styles.buttonRegister)} onClick={handleToRegister} >Зарегистрироваться</button>
+                </div>
+            </div>
+        </div>
+    )
+};

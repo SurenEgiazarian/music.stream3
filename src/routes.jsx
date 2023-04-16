@@ -1,49 +1,30 @@
-import { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
-import Main from './pages/main';
+import { Routes, Route} from 'react-router-dom';
+import { Main } from './pages/main';
 import { Login } from './pages/login';
-import { Signup } from './pages/signup';
-import { Playlist } from './pages/playlist';
+// import { Playlists } from './pages/playlists';
+import { PlaylistOne } from './pages/playlists/playlist-one';
+import { PlaylistTwo } from './pages/playlists/playlist-two';
+import { PlaylistThree } from './pages/playlists/playlist-three';
+import { Tracks } from './pages/tracks';
+import { Register } from './pages/register';
 import { NotFound } from './pages/not-found';
-import { ProtectedRoute } from './components/ProtectedRoute';
-import { cookies } from './utils/cookies';
-// import { authAPI } from './api/api';
+import { MyCollection } from './pages/playlists/my-collection';
+import { ProtectedRoute } from './components/protected-route';
 
-export function AppRoutes() {
-    const [isAllowed, setIsAllowed] = useState(cookies.check('token'));
-    const setIsAllowedHandler = () => {
-        setIsAllowed(cookies.check('token'));
-    };
-
-    // ('Ktotolya', 'bagrov.anatoli@gmail.com', 'Skypro-Music')
-    // {"refresh":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY2ODE3MTk4NywiaWF0IjoxNjY4MDg1NTg3LCJqdGkiOiJiNzBjYjFlODNkM2M0YzMzOTc1Y2U2MzViMWU5ODQ0OCIsInVzZXJfaWQiOjMxfQ.giDkSYEAkjjdicreGshSvjNohCIV1D0zgGddwhnQxiY","access":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY4MDg1ODg3LCJpYXQiOjE2NjgwODU1ODcsImp0aSI6ImRkMmQyOGMyZTQ2MTRlZTViMTNhMzBmMDBmN2I2OGNjIiwidXNlcl9pZCI6MzF9.cHLehDtVgaSxwi6AoSmLui0LzfKsP2OgjMxH3MxM9rQ"}
-
-    // authAPI.signup('KtotolyaTest3', 'test@test3.com', 'Music-Test3').then((response) => {
-    //     console.log(response);
-    // });
-
+export const AppRoutes = () => {
+    
     return (
         <Routes>
-            <Route
-                path="/login"
-                element={<Login setIsAllowedHandler={setIsAllowedHandler} />}
-            />
-            <Route path="/signup" element={<Signup />} />
-
-            <Route
-                element={
-                    <ProtectedRoute
-                        redirectPath="/login"
-                        isAllowed={isAllowed}
-                    />
-                }
-            >
-                <Route path="/" element={<Main />} />
-                <Route path="/my-tracks" element={<Playlist id="0" />} />
-                <Route path="/playlist/:id" element={<Playlist />} />
-            </Route>
-
-            <Route path="*" element={<NotFound />} />
+            {/* <Route path='/mycollection/playlists/:id' element={<ProtectedRoute redirectPath = '/login' protected> <Playlists/></ProtectedRoute>}/> */}
+            <Route path='/mycollection/playlists/playlist-of-the-day' element={<ProtectedRoute redirectPath = '/login' protected> <PlaylistOne/></ProtectedRoute>}/>
+            <Route path='/mycollection/playlists/best-dance-playlist' element={<ProtectedRoute redirectPath = '/login' protected> <PlaylistTwo/></ProtectedRoute>}/>
+            <Route path='/mycollection/playlists/indie-playlist' element={<ProtectedRoute redirectPath = '/login' protected> <PlaylistThree/></ProtectedRoute>}/>
+            <Route path='/mycollection' element={<ProtectedRoute redirectPath = '/login' protected> <MyCollection/></ProtectedRoute>}/>
+            <Route path='/tracks' element={<ProtectedRoute redirectPath = '/login' protected> <Tracks/></ProtectedRoute>}/>
+            <Route path='/' element={<ProtectedRoute redirectPath = '/login' protected> <Main/></ProtectedRoute>}/>
+            <Route path='/login' element={<ProtectedRoute redirectPath = '/'> <Login/> </ProtectedRoute> }/>
+            <Route path='/register' element={<ProtectedRoute redirectPath = '/'><Register/> </ProtectedRoute>}/>
+            <Route path='*' element={<NotFound/>}/>
         </Routes>
     );
-}
+};

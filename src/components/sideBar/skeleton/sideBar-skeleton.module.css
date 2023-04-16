@@ -1,0 +1,25 @@
+.light {
+    --background-color: #b1b1b1;
+    --color:#181818;
+    --image: #f6f4f4;
+    --logo: #b1b1b1;
+  }
+  .dark {
+    --background-color: #313131;
+    --color:#fff;
+    --image: #313131;
+    --logo: #4e4e4e;
+  }
+
+
+.imgSkeleton {
+    width: 250px;
+    height: 150px;
+    background-color: var(--image)
+}
+.avatarSkeleton {
+    width: 43px;
+    height: 43px;
+    background-color: var(--color);
+    border-radius: 50%;
+}

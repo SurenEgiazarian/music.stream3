@@ -1,7 +1,9 @@
-export function NotFound() {
+import styles from './style.module.css'
+import cn from 'classnames'
+
+export function NotFound () {
+
     return (
-        <div>
-            <h1>Page was not found :c</h1>
-        </div>
-    );
-}
+        <h1 className={cn(styles.center)}> Page was not found :C</h1>
+    )
+};
